@@ -14,4 +14,11 @@
     Authenticated and Email Verified. Securely Order Pizza!
 </button>
 
+<button
+  class="btn btn-success"
+  (click)="secureScopedOrder()"
+  *ngIf="auth.isAuthenticated() && auth.isEmailVerified()">
+    Authenticated and Email Verified. Securely SCOPE Order Pizza!
+</button>
+
 <h2>{{ message }}</h2>
