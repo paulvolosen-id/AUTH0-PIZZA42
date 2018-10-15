@@ -1,0 +1,17 @@
+<h1>Browse and Order Pizza!</h1>
+
+<button
+  class="btn btn-info"
+  (click)="browse()"
+  *ngIf="!auth.isAuthenticated() || !auth.isEmailVerified()">
+    Not authenticated, or email is not verified. Unable to place order, but feel free to browse our menu though!
+</button>
+
+<button
+  class="btn btn-success"
+  (click)="secureOrder()"
+  *ngIf="auth.isAuthenticated() && auth.isEmailVerified()">
+    Authenticated and Email Verified. Securely Order Pizza!
+</button>
+
+<h2>{{ message }}</h2>
