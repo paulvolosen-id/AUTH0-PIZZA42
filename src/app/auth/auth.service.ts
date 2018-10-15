@@ -87,16 +87,14 @@ export class AuthService {
     // return (new Date().getTime() < expiresAt);
   }
 
-  public isEmailVerified() : boolean { // TODO: we should check this on the auth profile
+  public isEmailVerified() : boolean {
     return localStorage.getItem('emailVerified') == 'true' ? true : false;
   }
 
    public verifyEmail() : void { // should set email verified on real user profile?
       localStorage.setItem('emailVerified', 'true');
   }
-
-
-
+  /** paulvo: New function to set read the user info access token, and set the local storage as to whether email is verified or not. */
   public setEmailVerificationStatus(authResult) : void  {
     // auth0.client.userInfo(authResult.accessToken, function(err, user) {
       this.auth0.client.userInfo(authResult.accessToken, function(err, user) {
