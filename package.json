@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm-run-all --parallel client",
+    "start": "npm-run-all --parallel server client",
     "client": "ng serve --host 0.0.0.0 --port 3000",
     "server": "node server.js",
     "build": "ng build",
