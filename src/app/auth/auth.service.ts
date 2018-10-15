@@ -16,7 +16,8 @@ export class AuthService {
     responseType: 'token id_token',
     audience: AUTH_CONFIG.apiUrl,
     redirectUri: AUTH_CONFIG.callbackURL,
-    scope: 'openid profile read:email read:email_verified read:gender read:messages'
+   // scope: 'openid profile email email_verified read:email read:email_verified read:gender read:messages'
+   scope: 'openid profile email read:gender read:messages'
   });
 
   userProfile: any;
@@ -35,7 +36,6 @@ export class AuthService {
         this.router.navigate(['/home']);
       } else if (err) {
         this.router.navigate(['/home']);
-        console.log('error in handleAuthentication: ' + err.error);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
